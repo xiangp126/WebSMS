@@ -1,0 +1,5 @@
+--- git untrace
+https://gist.github.com/nasirkhan/5919173
+
+git update-index --assume-unchanged FILE_NAME
+git update-index --no-assume-unchanged FILE_NAME
