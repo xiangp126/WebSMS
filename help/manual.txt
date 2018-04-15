@@ -1,0 +1,2 @@
+--- debug php
+$result = mysql_query($sql) or die($myQuery."<br/><br/>".mysql_error());

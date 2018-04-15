@@ -1,0 +1,316 @@
+/* css for global */
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    width: 1024px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+/* css for head */
+#top {
+    background: url(../images/bg_top.jpg) no-repeat;
+    height: 240px;
+}
+
+#title_system{
+    font-size: 46px;
+    font-family: "楷体";
+    padding: 40px 0 0 50px;
+    font-weight: bold;
+    color: #011326;
+    float: left;
+}
+
+#time_user {
+    color: #FFFFFF;
+    padding: 6px 0 0 0;
+    float: right;
+}
+
+#time {
+    padding-right: 10px;
+}
+
+#user {
+    float: right;
+    padding: 6px 5px;
+}
+
+#user a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#nav {
+    padding: 88px 0 0 80px;
+}
+
+#nav li {
+    width: 120px;
+    height: 34px;
+    margin: 0 12px;
+    line-height: 34px;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    background: url(../images/nav_bg.jpg);
+}
+
+#nav li a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/* css for index */
+#welcome {
+    padding: 50px 0 0 255px;
+    float: left;
+}
+
+#han {
+    font-size: 46px;
+    color: #0d3a84;
+    font-family: "新宋体";
+    font-weight: 900;
+}
+
+#eng {
+    float: right;
+    font-size: 16px;
+    padding: 10px 0 0 0;
+    color: #555
+}
+
+#img {
+    float: right;
+    padding-right: 80px;
+    padding-top: 55px;
+}
+
+#img img {
+    width: 200px;
+}
+
+/* css for medium */
+#main {
+    background: url(../images/bg_main.jpg) repeat-x;
+}
+
+/* css for title_table */
+#title_table {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* css for table_a */
+#table_a {
+    background: #679fd9;
+    margin: 10px auto 0;
+    width: 560px;
+    text-align: center;
+    padding: 2px 0 5px 0;
+}
+
+#table_a td {
+    background: #f2f7fc;
+    height: 26px;
+}
+
+#tr td {
+    background: #999999;
+    color: #FFFFFF;
+}
+
+.tr_button {
+    height: 26px;
+}
+
+/*--#page{ padding:5px 0 0 300px; width:350px; float:left;}  区别部分已在page_bottom.php定义--*/
+#page {
+    font-weight: 900;
+}
+
+#page a {
+    color: #0011FF;
+}
+
+#print {
+    float: right;
+    padding: 5px 308px 0 0;
+}
+
+/* css for id: table_c */
+#table_c {
+    background: #679fd9;
+    margin: 10px auto 0;
+    width: 660px;
+    text-align: center;
+    padding: 2px 0 5px 0;
+}
+
+#table_c td {
+    background: #f2f7fc;
+    height: 26px;
+}
+
+#table_c #tr td {
+    background: #999999;
+    color: #FFFFFF;
+}
+
+/* css for id: table_enlarge */
+#table_enlarge {
+    background: #679fd9;
+    margin: 10px auto 0;
+    width: 900px;
+    text-align: center;
+    padding: 2px 0 5px 0;
+}
+
+#table_enlarge td {
+    background: #f2f7fc;
+    height: 26px;
+}
+
+#table_enlarge #tr td {
+    background: #999999;
+    color: #FFFFFF;
+}
+
+/* css for id: table_shrink */
+#table_shrink {
+    background: #679fd9;
+    margin: 10px auto 0;
+    width: 400px;
+    text-align: center;
+    padding: 2px 0 5px 0;
+}
+
+#table_shrink td {
+    background: #f2f7fc;
+    height: 26px;
+}
+
+#table_shrink #tr td {
+    background: #999999;
+    color: #FFFFFF;
+}
+
+#tel {
+    width: 105px;
+}
+
+#address {
+    width: 190px;
+}
+
+/* css for query */
+#table_b_select {
+    background: #7cb6f5;
+    width: 300px;
+    margin: 10px auto 30px;
+    text-align: center;
+}
+
+#table_b_select td {
+    background: #FFFFFF;
+    height: 24px;
+}
+
+#select_name {
+    color: #0466cd;
+}
+
+#height_select_if_top {
+    height: 65px;
+}
+
+#height_select_if_bottom {
+    height: 50px;
+}
+
+#riqi {
+    width: 200px;
+}
+
+/* css for edit */
+.title_edit {
+    padding-top: 50px;
+}
+
+#hint {
+    font-size: 12px;
+    color: #999999;
+    text-align: center;
+    padding-top: 6px;
+}
+
+#hint span {
+    color: #FF0000;
+};
+
+/* css for add */
+#height_add_top {
+    padding-top: 50px;
+}
+
+#height_add_bottom {
+    padding-top: 80px;
+}
+
+/* css for bottom */
+#foot {
+    background: url(../images/bg_foot.jpg);
+    height: 140px;
+}
+
+#copyright {
+    text-align: center;
+    color: #eee;
+    font-size: 12px;
+    padding-top: 105px;
+}
+
+/* css for login */
+#login {
+    background: url(../images/bg_login.jpg);
+    height: 584px;
+}
+
+#login table {
+    padding: 163px 0 0 523px;
+}
+
+#login table tr {
+    height: 37px;
+}
+
+#login table input {
+    width: 150px;
+    padding-left: 5px;
+    height: 26px;
+    line-height: 26px;
+    border: 0;
+    background: url(../images/bg_input.jpg) repeat-x;
+    font-size: 14px;
+    color: #999999;
+    letter-spacing: 2px;
+}
+
+#login table #button {
+    background: url(../images/bg_button.jpg);
+    width: 76px;
+    height: 34px;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin: 10px 25px 0 0;
+}

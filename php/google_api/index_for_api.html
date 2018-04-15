@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <title>Pie Chart Demo (Google VAPI) - https://codeofaninja.com/</title>
+        <link href="tooltip.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body style="font-family: Arial;border: 0 none;">
+
+        <!-- where the chart will be rendered -->
+        <div id="visualization" style="width: 600px; height: 400px;"></div>
+
+        <!-- load api -->
+        <script type="text/javascript" src="jsapi.js"></script>
+
+        <script type="text/javascript">
+            //load package
+            google.load('visualization', '1', {packages: ['corechart']});
+        </script>
+        <script src="corechart.js" type="text/javascript"></script>
+        <link href="ui+en.css" type="text/css" rel="stylesheet">
+        <script src="corechart+en.I.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            function drawVisualization() {
+                // Create and populate the data table.
+                var data = google.visualization.arrayToDataTable([
+                    ['PL', 'Ratings'],
+                    ['Phyton', 3],
+                    ['Pearl', 2],
+                    ['Java', 20],
+                    ['Ruby', 1],
+                ]);
+
+                // Create and draw the visualization.
+                new google.visualization.PieChart(document.getElementById('visualization')).
+                    draw(data, {title:"Tiobe Top Programming Languages for June 2012"});
+            }
+
+google.setOnLoadCallback(drawVisualization);
+        </script>
+    </body>
+</html>
