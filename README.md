@@ -1,15 +1,17 @@
 - This project aims to implement an 'Enterprise Salary Management System'
 - Featured by
-    - login check using 'session', better than cookie
-    - pagination for all sql query page
-    - js on client side, checking form before submit, more speedy
-    - draw beautiful pie chart for 'salary tax analysis', as below
+    - login check using 'session', not just cookie
+    - pagination browse for all sql query page
+    - additional js on client side, checking form before submit, speedy
+    - detailed calculation for 'salary tax analysis'
+    - and draw beautiful pie chart for it, as below
 ![](https://github.com/xiangp126/jear/blob/master/gif/salary_draw.gif)
 - Programming Environment
     - PhpMyAdmin SQL Dump version 4.0.10.20
     - MySQL Server version: 5.1.73
     - PHP Version: 5.3.3
     - CentOS 6.9
+    - VIM and My Personel [Giggle](https://github.com/xiangp126/Giggle)
 
 ## Quick Deploy
 ### Pre
