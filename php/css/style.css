@@ -283,7 +283,8 @@ body {
 
 /* css for login */
 #login {
-    background: url(../images/bg_login.jpg);
+    /* background: url(../images/bg_login.jpg); */
+    background: url(https://pic4.zhimg.com/v2-b29adeeb52d6ffeb59598b8be351860d_1200x500.jpg);
     height: 584px;
 }
 
