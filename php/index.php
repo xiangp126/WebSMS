@@ -16,14 +16,14 @@ if(isset($_SESSION['login_user'])){
     <body>
         <div id="login" class="name">
             <table>
-                <form name='login_form' action="login_check.php" method="post" accept-charset="utf-8" onsubmit='return checkThisForm(this.form)'>
+                <form name='login_form' action="login_check.php" method="post" accept-charset="utf-8" onsubmit='return checkThisForm(this)'>
                     <tr>
                         <th>管理员:</th>
                         <td><input type="text" name="username" value="admin"></td>
                     </tr>
                     <tr>
                         <th>密&nbsp;&nbsp;&nbsp;码:</th>
-                        <td><input type="password" name="password" value="password"></td>
+                        <td><input type="password" name="password" value=""></td>
                     </tr>
                     <tr>
                         <td colspan="2">
