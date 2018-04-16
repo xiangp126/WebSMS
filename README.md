@@ -1,6 +1,10 @@
 - This project aims to implement an 'Enterprise Salary Management System'
 - Featured by
-    - login check using 'session', not just cookie
+    - encrypted password stored in db with sha1
+    - login check using 'session' with 'timeout' set
+    - basic edit/add/modify/query page for overtime/leave/bonus/personel/position/salary
+    - pay for overtime according to different type, and overtime type support edit/add/modify
+    - deduct for leave according to different type, and leave type support edit/add/modify
     - pagination browse for all sql query page
     - additional js on client side, checking form before submit, speedy
     - detailed calculation for 'salary tax analysis'
