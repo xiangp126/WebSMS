@@ -1,0 +1,149 @@
+@charset "utf-8";
+*{
+    margin:0px;
+    padding:0px;
+}
+
+body {
+    background: url("../images/login_bac.jpg") no-repeat;
+    background-size: 100%;
+
+}
+#register{
+    background: url("../images/register_bac.png") no-repeat;
+    width: 800px;
+    height: 386px;
+
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left: -400px;
+    margin-top: -193px;
+}
+
+#register h1{
+    font-size: 32px;
+    font-family:黑体;
+    color: white;
+
+    margin-top: 52px;
+    margin-left: 47px;
+}
+
+#register p{
+
+    font-size: 12px;
+    font-family: 宋体;
+    color: white;
+
+    line-height: 20px;
+    margin-top: 36px;
+    margin-left: 47px;
+    width: 294px;
+}
+
+#btn_register{
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color: white;
+    background: url("../images/register_btn_bac.png") no-repeat;
+
+    width: 190px;
+    line-height: 36px;
+    text-align: center;
+
+    border: 0;
+
+    margin-top: 40px;
+    margin-left: 47px;
+}
+
+#btn_register:hover{
+    color: black;
+    font-weight: lighter;
+    background: url("../images/register_btn_bac_hover.png") no-repeat;
+}
+
+#login {
+    width:396px;
+    height:480px;
+
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left: -38px;
+    margin-top: -240px;
+
+    background:#fff;
+    border: 4px;
+    /* 阴影效果 水平偏移 垂直偏移  半边 颜色 */
+    box-shadow:0px 0px 5px #999;
+    /* 圆角 */
+    border-radius:5px;
+
+    text-align: center;
+}
+
+#image_logo{
+   margin-top: 10px;
+    margin-bottom:80px ;
+}
+
+#username{
+    background: url("../images/user.png") no-repeat 5px center;
+}
+
+#password{
+    background: url("../images/password.png") no-repeat 5px center;
+}
+
+.text_field{
+    width: 330px;
+    height: 28px;
+    border: 0;
+    border-bottom:2px solid #eaeaea;
+
+    text-indent: 50px;
+}
+
+#forget_pwd{
+    font-size: 12px;
+    color: #969696;
+    text-decoration: none;
+    float: right;
+}
+
+#forget_pwd:hover {;
+    color: #26c1ff;
+    text-decoration: underline;
+}
+
+#btn_login{
+    font-size: 24px;
+    font-family: "微软雅黑";
+    color: white;
+    background: url("../images/btn_login_bac.png");
+
+    width: 330px;
+    line-height: 55px;
+    text-align: center;
+
+    border: 0;
+}
+
+#div_username{
+
+}
+
+#div_password{
+    margin-top: 75px ;
+}
+
+#div_forget{
+    margin-right: 30px;
+    margin-top: 8px;
+}
+
+#div_btn_login{
+    margin-top: 80px;
+}

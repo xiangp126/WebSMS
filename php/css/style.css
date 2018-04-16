@@ -280,39 +280,3 @@ body {
     font-size: 12px;
     padding-top: 105px;
 }
-
-/* css for login */
-#login {
-    /* background: url(../images/bg_login.jpg); */
-    background: url(https://pic4.zhimg.com/v2-b29adeeb52d6ffeb59598b8be351860d_1200x500.jpg);
-    height: 584px;
-}
-
-#login table {
-    padding: 163px 0 0 523px;
-}
-
-#login table tr {
-    height: 37px;
-}
-
-#login table input {
-    width: 150px;
-    padding-left: 5px;
-    height: 26px;
-    line-height: 26px;
-    border: 0;
-    background: url(../images/bg_input.jpg) repeat-x;
-    font-size: 14px;
-    color: #999999;
-    letter-spacing: 2px;
-}
-
-#login table #button {
-    background: url(../images/bg_button.jpg);
-    width: 76px;
-    height: 34px;
-    color: #FFFFFF;
-    font-weight: bold;
-    margin: 10px 25px 0 0;
-}
