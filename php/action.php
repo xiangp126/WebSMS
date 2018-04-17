@@ -407,18 +407,33 @@ if ($operation == 'bntype_del') {
 }
 
 if ($operation == 'bntype_add') {
-    $grade = $_POST['grade'];
+    $id = $_POST['id'];
     $name  = $_POST['name'];
 
     if ($sqlYes != 0) {
-        $sql = "INSERT INTO bntype (`grade`, `name`) VALUES ('$grade', '$name');";
+        $sql = "INSERT INTO bntype (`id`, `name`) VALUES ('$id', '$name');";
         if ($result = mysql_query($sql))
-            echo "<script>alert('恭喜，".$grade."级 奖金信息添加成功！'); location.href='bntype_add.php';</script>";
+            echo "<script>alert('恭喜，".$id."级 奖金信息添加成功！'); location.href='bntype_add.php';</script>";
         else
-            echo "<script>alert('抱歉，".$grade."级 奖金信息添加失败！'); location.href='bntype_add.php';</script>";
+            echo "<script>alert('抱歉，".$id."级 奖金信息添加失败！'); location.href='bntype_add.php';</script>";
     }
 }
 // Edit for overtime type - end
+
+// Edit bsalary info -- start
+if ($operation == 'bsalary_edit') {
+    $id = @$_POST['id'];
+    $bsalary = @$_POST['bsalary'];
+
+    if ($sqlYes != 0) {
+        $sql = "update bsalary as base set bsalary = $bsalary where id = $id;";
+        if ($result = mysql_query($sql))
+            echo "<script>alert('恭喜，".$id."号员工 月薪更新成功！'); location.href='bsalary_edit.php?page=".$pageNum."';</script>";
+        else
+            echo "<script>alert('抱歉，".$id."号员工 月薪更新失败！'); location.href='bsalary_edit.php?page=".$pageNum."';</script>";
+    }
+}
+// Edit bsalary info -- end
 
 // Calc salary -- start
 // calculate last month
@@ -438,13 +453,13 @@ if ($operation == 'salary_calc') {
     if ($sqlYes != 0) {
         // create view overtime-view
         mysql_query("drop view if exists ovview;");
-        mysql_query("create or replace view ovview as select id, year, month, grade, sum(hours) as hours from overtime as ov where year = '$year' and month = '$month' group by id, grade;");
+        mysql_query("create or replace view ovview as select id, year, month, id, sum(hours) as hours from overtime as ov where year = '$year' and month = '$month' group by id, id;");
         // create view leave-view
         mysql_query("drop view if exists lvview;");
-        mysql_query("create or replace view lvview as select id, year, month, grade, sum(hours) as hours from `leave` as lv where year = '$year' and month = '$month' group by id, grade;");
+        mysql_query("create or replace view lvview as select id, year, month, id, sum(hours) as hours from `leave` as lv where year = '$year' and month = '$month' group by id, id;");
         // create view bonus-view
         mysql_query("drop view if exists bnview;");
-        mysql_query("create or replace view bnview as select id, year, month, grade, sum(bonus) as bonus from `bonus` as bn where year = '$year' and month = '$month' group by id, grade;");
+        mysql_query("create or replace view bnview as select id, year, month, id, sum(bonus) as bonus from `bonus` as bn where year = '$year' and month = '$month' group by id, id;");
         // Collect needy info
         $sql = "select pe.id, bsalary from personel as pe, bsalary as bs where pe.id = bs.id;";
         $result = mysql_query("$sql");
@@ -453,7 +468,7 @@ if ($operation == 'salary_calc') {
         while ($row = mysql_fetch_array($result)) {
             list($id, $bsalary) = $row;
             // Calc overtime pay
-            $paySql = "select sum(pay) as pay from (select id, hours * wage as pay from ovview as view left join ovtype as type on view.grade = type.grade)as dr where id = '$id' group by id;";
+            $paySql = "select sum(pay) as pay from (select id, hours * wage as pay from ovview as view left join ovtype as type on view.id = type.id)as dr where id = '$id' group by id;";
             $payResult = mysql_query($paySql);
             if ($payRow = mysql_fetch_array($payResult)) {
                 list($pay) = $payRow;
@@ -461,7 +476,7 @@ if ($operation == 'salary_calc') {
                 $pay = 0.0;
             }
             // Calc leave deduct
-            $deductSql = "select sum(deduct) as deduct from (select id, hours * wage as deduct from lvview as view left join lvtype as type on view.grade = type.grade)as dr where id = '$id' group by id;";
+            $deductSql = "select sum(deduct) as deduct from (select id, hours * wage as deduct from lvview as view left join lvtype as type on view.id = type.id)as dr where id = '$id' group by id;";
             $deductResult = mysql_query($deductSql);
             if ($deductRow = mysql_fetch_array($deductResult)) {
                 list($deduct) = $deductRow;

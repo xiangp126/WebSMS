@@ -69,6 +69,7 @@ function mmLoadMenus() {
     window.mm_menu_0629095609_0 = new Menu("root",76,18,"",12,"#000000","#FFFFFF","#c7dcf2","#4b91d8","center","middle",3,0,500,-5,7,true,true,true,0,true,true);
     mm_menu_0629095609_0.addMenuItem("编辑信息","location='personel_edit.php'");
     mm_menu_0629095609_0.addMenuItem("添加员工","location='personel_add.php'");
+    mm_menu_0629095609_0.addMenuItem("编辑月薪","location='bsalary_edit.php'");
     mm_menu_0629095609_0.addMenuItem("查询信息","location='personel_query.php'");
     mm_menu_0629095609_0.hideOnMouseOut=true;
     mm_menu_0629095609_0.bgColor='#FFFFFF';

@@ -308,6 +308,27 @@ function bntype_del(grade, page) {
 }
 // Edit bonus type info -- end
 
+// Edit bsalary info -- start
+function bsalary_edit(id, name, bsalary, page) {
+    document.write("<!DOCTYPE html><html><head><meta http-equiv='Content-Type' content='text/html; charset=utf8' /><link href='../css/style.css' rel='stylesheet' type='text/css' /></head>");
+    document.write("<body><div id='title_table' class='title_edit'>编辑<span id='select_name'>&nbsp;"
+               + id + "号</span>&nbsp;员工基本月薪</div>");
+    document.write("<table id='table_a'><form action=action.php?page="+ page +" method=post name=bsalary_edit><tr id='tr'><td>员工号</td><td>姓名</td><td>基本月薪</td></tr>");
+    document.write("<tr><td><input type=hidden name=id value="
+               + id
+               + ">"
+               + id
+               + "</td><td><input type=hidden name=name value="
+               + name
+               + ">"
+               + name
+               + "</td><td><input type='text' name='bsalary' value="
+               + bsalary
+               + " size='30'><input type=hidden name=operation value=bsalary_edit></td></tr><tr class='tr_button'><td colspan=3><input type=reset value=' 还 原 '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=submit value=' 保 存 ' onclick='return check_bsalary(this.form)'></td></tr></form></table><div id='hint'><span>%提示：</span>员工编号及姓名在此不可修改！</div></body></html>");
+}
+// Edit bsalary info -- end
+
+// Show salary statistics -- start
 function salary_stats(id, name, year, month, preTax) {
     document.write("<form action='salary_stats.php' method='post' name='salary_stats'>");
     document.write("<input type=hidden name=id value="
@@ -323,6 +344,7 @@ function salary_stats(id, name, year, month, preTax) {
                + "><input type='hidden' name='operation' value='salary_stats'></form>");
     document.salary_stats.submit();
 }
+// Show bsalary statistics info -- end
 
 function login_out(userid) {
     if (confirm(userid + "，您确定要注销登陆？")) {
@@ -463,6 +485,17 @@ function check_bntype(form) {
     if (name == '' || name.length > '10') {
         alert('抱歉，奖金类别名称 必须填写并且长度小于10 ！');
         form.name.focus();
+        return false;
+    }
+    document.myform.submit();
+}
+
+function check_bsalary(form) {
+    var bsalary = form.bsalary.value;
+    var regex = /^[1-9][0-9]{0,10}\.?[0-9]*$/;
+    if (bsalary == '' || ! bsalary.match(regex)) {
+        alert('抱歉，基础薪水 必须为阿拉伯数字且不以0开头 ！');
+        form.bsalary.focus();
         return false;
     }
     document.myform.submit();
