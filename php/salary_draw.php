@@ -40,9 +40,16 @@
                             echo "['$key', $value],";
                         } ?>
                     ]);
+                // Create draw options
+                var options = {
+                    title: '税前薪水去向统计图',
+                    is3D: true,
+                    width: 900,
+                    height: 500
+                }
                 // Create and draw the visualization.
                 new google.visualization.PieChart(document.getElementById('visualization')).
-                        draw(data, {title:"税前薪水去向统计图"});
+                        draw(data, options);
             }
             google.setOnLoadCallback(drawVisualization);
         </script>
