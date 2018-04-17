@@ -29,7 +29,7 @@ if ($row = mysql_fetch_array($result))  // 如果有记录则输出
     echo "<tr id='tr'>";
     echo "<td>加班类别</td>";
     echo "<td>加班类别名称</td>";
-    echo "<td>加班时薪</td>";
+    echo "<td>每小时加班补贴</td>";
     echo "<td>可选操作</td>";
     echo "</tr>";
     do

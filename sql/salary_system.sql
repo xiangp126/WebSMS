@@ -244,7 +244,7 @@ DROP TABLE IF EXISTS `lvtype`;
 CREATE TABLE IF NOT EXISTS `lvtype` (
   `grade` int(2) NOT NULL AUTO_INCREMENT COMMENT '请假类别号',
   `name` char(10) NOT NULL,
-  `wage` int(5) NOT NULL COMMENT '每小时扣薪',
+  `wage` double(20, 2) NOT NULL COMMENT '扣月薪转换为时薪的百分比',
   PRIMARY KEY (`grade`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='请假类别' AUTO_INCREMENT=4 ;
 
@@ -253,9 +253,9 @@ CREATE TABLE IF NOT EXISTS `lvtype` (
 --
 
 INSERT INTO `lvtype` (`grade`, `name`, `wage`) VALUES
-(1, '带薪休假', 0),
-(2, '常规病假', 40),
-(3, '普通事假', 60);
+(1, '带薪休假', 0.0),
+(2, '常规病假', 0.5),
+(3, '普通事假', 1.0);
 
 -- --------------------------------------------------------
 

@@ -133,7 +133,7 @@ function ovtype_edit(grade, name, wage, page) {
     document.write("<!DOCTYPE html><html><head><meta http-equiv='Content-Type' content='text/html; charset=utf8' /><link href='../css/style.css' rel='stylesheet' type='text/css' /></head>");
     document.write("<body><div id='title_table' class='title_edit'>编辑<span id='select_name'>&nbsp;"
                + grade + "级</span>&nbsp;请假类别信息</div>");
-    document.write("<table id='table_c'><form action=action.php?page="+ page +" method=post name=ovtype_edit><tr id='tr'><td>请假类别</td><td>请假类别名称</td><td>每小时扣薪</td></tr>");
+    document.write("<table id='table_c'><form action=action.php?page="+ page +" method=post name=ovtype_edit><tr id='tr'><td>加班类别</td><td>加班类别名称</td><td>每小时补贴</td></tr>");
     document.write("<tr><td><input type=hidden name=grade value="
                + grade
                + ">"
@@ -216,7 +216,7 @@ function lvtype_edit(grade, name, wage, page) {
     document.write("<!DOCTYPE html><html><head><meta http-equiv='Content-Type' content='text/html; charset=utf8' /><link href='../css/style.css' rel='stylesheet' type='text/css' /></head>");
     document.write("<body><div id='title_table' class='title_edit'>编辑<span id='select_name'>&nbsp;"
                + grade + "级</span>&nbsp;请假类别信息</div>");
-    document.write("<table id='table_a'><form action=action.php?page="+ page +" method=post name=lvtype_edit><tr id='tr'><td>请假类别</td><td>请假类别名称</td><td>每小时扣薪</td></tr>");
+    document.write("<table id='table_a'><form action=action.php?page="+ page +" method=post name=lvtype_edit><tr id='tr'><td>请假类别</td><td>请假类别名称</td><td>扣时薪百分比</td></tr>");
     document.write("<tr><td><input type=hidden name=grade value="
                + grade
                + ">"
@@ -363,7 +363,7 @@ function check_personel(form) {
     var dp_id = form.dp_id.value;
     // var regex = /^[1-9]{1,2}$/;
     if (dp_id == '' || ! dp_id.match(regex)) {
-        alert('抱歉，部门编号 必须为2位以内阿拉伯数字岁！');
+        alert('抱歉，部门编号 必须为2位以内阿拉伯数字！');
         form.dp_id.focus();
         return false;
     }
@@ -375,9 +375,9 @@ function check_personel(form) {
     }
     var age = form.age.value;
     // var regex = /^[2-6][0-9]$/;
-    var regex = /^1[89]|[2-9]\d$/;
+    var regex = /^1[89]|[2-9]\d{1}$/;
     if (age == '' || ! age.match(regex)) {
-        alert('抱歉，员工年龄 必须大于18岁！');
+        alert('抱歉，员工年龄 必须介于18-100之间！');
         form.age.focus();
         return false;
     }
@@ -449,7 +449,7 @@ function check_lvtype(form) {
     var wage = form.wage.value;
     var regex = /^\d{0,5}\.?[0-9]*$/;
     if (wage == '' || ! wage.match(regex)) {
-        alert('抱歉，请假每小时扣薪 必须为阿拉伯数字，可以为0 ！');
+        alert('抱歉，请假扣时薪百分比 必须为阿拉伯数字，可以为0 ！');
         form.wage.focus();
         return false;
     }

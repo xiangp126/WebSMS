@@ -29,7 +29,7 @@ if ($row = mysql_fetch_array($result))  // 如果有记录则输出
     echo "<tr id='tr'>";
     echo "<td>请假类别</td>";
     echo "<td>请假类别名称</td>";
-    echo "<td>每小时扣薪</td>";
+    echo "<td>扣时薪百分比</td>";
     echo "<td>可选操作</td>";
     echo "</tr>";
     do

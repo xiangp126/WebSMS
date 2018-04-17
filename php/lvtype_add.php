@@ -12,7 +12,7 @@ header("Content-type: text/html; charset=utf8");
         <tr id='tr'>
             <td>请假类别号</td>
             <td>请假类别名称</td>
-            <td>每小时扣薪</td>
+            <td>扣时薪百分比</td>
         </tr>
         <tr>
 <?php
