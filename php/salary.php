@@ -60,7 +60,7 @@ if($row = mysql_fetch_array($result)) {
     echo "<td>税前薪水</td>";
     echo "<td>税后薪水</td>";
     echo "<td>结算年月</td>";
-    echo "<td>扣税细节</td>";
+    echo "<td>扣税统计</td>";
     echo "</tr>";
     do {
         list($id, $name, $dp_name, $title, $year, $month, $bsalary, $pay, $deduct, $bonus, $preTax, $postTax) = $row;
@@ -76,7 +76,7 @@ if($row = mysql_fetch_array($result)) {
         echo "<td>$preTax</td>";
         echo "<td>$postTax</td>";
         echo "<td>".$year."年".$month."月</td>";
-        echo "<td><input type='button' onclick=\"salary_stats($id, '$name', $year, $month, $preTax)\" value='查看'></td>";
+        echo "<td><input type='button' onclick=\"salary_stats($id, '$name', $year, $month, $preTax)\" value='3D Pie'></td>";
         echo "</tr>";
     } while($row = mysql_fetch_array($result));
     echo "</table>";
