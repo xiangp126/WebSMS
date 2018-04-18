@@ -80,11 +80,12 @@ body {
 
 /* css for medium */
 #main {
-    height: 800px;
+    height: 750px;
     padding-top: 18px;
     border: solid 1px;
     opacity: 1;
-    background: url(http://img18.3lian.com/d/file/201710/10/fb1415135258cc538039d0a7346273f8.jpg) no-repeat;
+    background: url(../images/indexx_bg.jpg) no-repeat;
+    background-size: auto 100%;
 }
 
 /* css for title_table */
