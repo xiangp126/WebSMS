@@ -2,7 +2,7 @@
 	</div>
 	<div id="foot">
 		<div id="copyright">
-			上海交通大学    信息与通信工程<br>
+			@Copyright 苏州大学&nbsp;&nbsp;&nbsp; 宋月阳<br>
 		</div>
 	</div>
 </body>
