@@ -79,8 +79,8 @@ body {
 
 /* css for medium */
 #main {
-    /* background: url(../images/bg_main.jpg) repeat-x; */
-    background: url(https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/01/0E/ChMkJ1bKwauIblXBAAw7FNHg5zUAALGcACSfk0ADDss537.jpg) repeat-x;
+    background: url(../images/bg_main.jpg) repeat-x;
+    /* background: url(https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/01/0E/ChMkJ1bKwauIblXBAAw7FNHg5zUAALGcACSfk0ADDss537.jpg) repeat-x; */
 }
 
 /* css for title_table */
@@ -248,14 +248,20 @@ body {
 
 /* css for bottom */
 #foot {
-    background: url(../images/bg_foot.jpg);
-    height: 140px;
+    padding-top: 50px;
+    padding-bottom: 30px;
 }
-
+.nav_bottom {
+    height: 20px;
+    background:#7a7777;
+    /* background: #fce5cd; */
+    position: relative;
+    padding: 50px 0;
+}
 #copyright {
     text-align: center;
     color: #b6d7a8;
     font-size: 20px;
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding-top: 18px;
+    padding-bottom: 18px;
 }
