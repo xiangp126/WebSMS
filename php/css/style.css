@@ -80,7 +80,11 @@ body {
 
 /* css for medium */
 #main {
-    background: url(../images/bg_main.jpg) repeat-x;
+    height: 800px;
+    padding-top: 18px;
+    border: solid 1px;
+    opacity: 1;
+    background: url(http://img18.3lian.com/d/file/201710/10/fb1415135258cc538039d0a7346273f8.jpg) no-repeat;
 }
 
 /* css for title_table */
@@ -248,11 +252,11 @@ body {
 
 /* css for bottom */
 #foot {
-    padding-top: 50px;
-    padding-bottom: 30px;
+    padding-top: 18px;
+    padding-bottom: 18px;
 }
 .nav_bottom {
-    height: 20px;
+    height: 18px;
     background:#7a7777;
     /* background: #fce5cd; */
     position: relative;
@@ -261,7 +265,7 @@ body {
 #copyright {
     text-align: center;
     color: #b6d7a8;
-    font-size: 20px;
+    font-size: 18px;
     padding-top: 18px;
     padding-bottom: 18px;
 }
