@@ -12,9 +12,9 @@
     <body>
         <header>
             <a href="index.php">
-                <img src="images/gimp-logo.jpg" alt="gimp logo" class="figure" height='80' width='80'>
+                <img src="images/gimp-logo.jpg" alt="logo" class="figure" height='80' width='80'>
             </a>
-            <h1>Enterprise Salary Management System</h1>
+            <h1>Salary Management System</h1>
         </header>
         <div id="time_user">
             <div id="time">
