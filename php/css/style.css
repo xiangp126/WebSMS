@@ -5,10 +5,6 @@
     margin: 0px;
 }
 
-li {
-    list-style: none;
-}
-
 body {
     width: 1024px;
     margin: 0 auto;
@@ -17,7 +13,6 @@ body {
 
 /* css for head */
 #top {
-    background: url(../images/bg_top.jpg) no-repeat;
     height: 240px;
 }
 
@@ -27,48 +22,28 @@ body {
     padding: 40px 0 0 50px;
     font-weight: bold;
     color: #011326;
-    float: left;
+    float: right;
 }
 
 #time_user {
-    /* color: #FFFFFF; */
     padding: 6px 0 0 0;
     float: right;
 }
 
 #time {
+    color: #c27ba0;
     position: relative;
-    /* float: right; */
     padding-right: 10px;
 }
 
 #user {
+    color: #b6d7a8;
     float: right;
     padding: 6px 5px;
 }
 
 #user a {
     color: #5b0f00;
-    text-decoration: none;
-}
-
-#nav {
-    padding: 88px 0 0 80px;
-}
-
-#nav li {
-    width: 120px;
-    height: 34px;
-    margin: 0 12px;
-    line-height: 34px;
-    float: left;
-    text-align: center;
-    font-size: 16px;
-    background: url(../images/nav_bg.jpg);
-}
-
-#nav li a {
-    color: #FFFFFF;
     text-decoration: none;
 }
 
@@ -104,7 +79,8 @@ body {
 
 /* css for medium */
 #main {
-    background: url(../images/bg_main.jpg) repeat-x;
+    /* background: url(../images/bg_main.jpg) repeat-x; */
+    background: url(https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/01/0E/ChMkJ1bKwauIblXBAAw7FNHg5zUAALGcACSfk0ADDss537.jpg) repeat-x;
 }
 
 /* css for title_table */

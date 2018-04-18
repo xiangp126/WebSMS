@@ -3,13 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <title>Enterprise Salary Management System</title>
+        <link rel="icon" type="image/ico" href="images/gimp-logo.jpg" />
         <link rel="stylesheet" href="css/menu.css" media="screen" type="text/css" />
         <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
     </head>
     <script src="js/menu.js"></script>
     <script src="js/function.js"></script>
     <body>
-        <h1>Enterprise Salary Management System</h1>
+        <header>
+            <a href="index.php">
+                <img src="images/gimp-logo.jpg" alt="gimp logo" class="figure" height='80' width='80'>
+            </a>
+            <h1>Enterprise Salary Management System</h1>
+        </header>
         <div id="time_user">
             <div id="time">
 <script language="javascript" type="text/javascript" charset="UTF-8">

@@ -1,7 +1,21 @@
-h1{
-    font:400 40px 'pt sans',sans-serif;
-    text-align:center;
+@charset "utf-8";
+h1 {
+    display: inline;
+    text-align: center;
+    border: 3px solid #FFA500;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px #828282;
 }
+header {
+    text-align: center;
+    letter-spacing: 1px;
+    height: 8em;
+    padding: 2em 10%;
+}
+.figure {
+    vertical-align:middle;
+}
+
 .nav a{
     text-decoration:none;
 }

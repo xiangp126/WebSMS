@@ -22,6 +22,7 @@ if ($getId != "") {
     if ($getId != 'All') {
         $sql = "$sql"."and pe.id = '$getId' ";
     }
+    echo "<div id='height_select_if_top'></div>";
 }
 if ($getYear != "" && $getYear != 'All') {
     $sql = "$sql"."and year = '$getYear' ";
