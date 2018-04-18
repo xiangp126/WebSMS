@@ -10,7 +10,7 @@
     <script src="js/function.js"></script>
     <body>
         <h1>Enterprise Salary Management System</h1>
-        <div id="time_user1">
+        <div id="time_user">
             <div id="time">
 <script language="javascript" type="text/javascript" charset="UTF-8">
 window.onload=function() {
@@ -77,6 +77,6 @@ window.onload=function() {
                 </li>
             </ul>
         </div>
-        <div style="text-align:center;clear:both;margin-top:10px"></div>
+        <div style="text-align:center;clear:both;margin-top:18px"></div>
     </body>
 </html>

@@ -31,12 +31,14 @@ body {
 }
 
 #time_user {
-    color: #FFFFFF;
+    /* color: #FFFFFF; */
     padding: 6px 0 0 0;
     float: right;
 }
 
 #time {
+    position: relative;
+    /* float: right; */
     padding-right: 10px;
 }
 
@@ -46,7 +48,7 @@ body {
 }
 
 #user a {
-    color: #FFFFFF;
+    color: #5b0f00;
     text-decoration: none;
 }
 
@@ -276,7 +278,8 @@ body {
 
 #copyright {
     text-align: center;
-    color: #eee;
-    font-size: 12px;
-    padding-top: 105px;
+    color: #b6d7a8;
+    font-size: 20px;
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
