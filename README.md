@@ -9,7 +9,7 @@
     - additional js on client side, checking form before submit, speedy
     - detailed calculation for 'salary tax analysis'
     - and draw 3D beautiful pie chart for it, as below
-![](https://github.com/xiangp126/jear/blob/master/gif/salary_draw.gif)
+![](https://github.com/xiangp126/jear/blob/master/gif/jear.gif)
 - Programming Environment
     - PhpMyAdmin SQL Dump version 4.0.10.20
     - MySQL Server version: 5.1.73
