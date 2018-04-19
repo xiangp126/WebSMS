@@ -24,6 +24,7 @@ $sql = "select * from $table order by grade limit $offset, $itemLimit;";
 $result = mysql_query($sql);
 if ($row = mysql_fetch_array($result))  // 如果有记录则输出
 {
+    echo "<div id='height_select_if_top'></div>";
     echo "<div id='title_table'>编辑请假类别信息</div>";
     echo "<table id='table_c'>";
     echo "<tr id='tr'>";
@@ -46,6 +47,7 @@ if ($row = mysql_fetch_array($result))  // 如果有记录则输出
     } while ($row = mysql_fetch_array($result));
     echo "</table>";
     @require_once "pagi_tail.php";
+    echo "<div id='height_select_if_bottom'></div>";
 }
 @require_once "foot.php";
 ?>

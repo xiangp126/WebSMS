@@ -10,7 +10,7 @@ $day = date('d');
 ?>
 
 <script src="js/function.js" charset="utf-8"></script>
-<div id="height_add_top"></div>
+<div id="height_select_if_top"></div>
 <div id='title_table'>添加请假信息</div>
 <table id='table_a'>
     <form action=action.php method=post name=position_add>

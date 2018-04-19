@@ -5,7 +5,7 @@ header("Content-type: text/html; charset=utf8");
 ?>
 
 <script src="js/function.js" charset="utf-8"></script>
-<div id="height_add_top"></div>
+<div id="height_select_if_top"></div>
 <div id='title_table'>添加加班类别信息</div>
 <table id='table_a'>
     <form action=action.php method=post name=ovtype_add>

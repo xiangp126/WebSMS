@@ -86,7 +86,7 @@ while($pMonth <= $numOfMonths)
     </form>
 </table>
 <div id='hint'><span>%提示：</span>可以直接键盘敲快速定位，支持 'All' 查询！</div>
-<div id="height_select_if_bottom"></div>
+<div id="height_select_if_top"></div>
 
 <?php
 @require_once "foot.php"

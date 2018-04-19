@@ -18,7 +18,7 @@
         </tr>
     </form>
 </table>
-<div id="height_select_if_bottom"></div>
+<div id="height_select_if_top"></div>
 
 <?php
 @require_once "foot.php";
