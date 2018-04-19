@@ -4,7 +4,7 @@ header("Content-type: text/html; charset=utf8");
 @require_once "head.php";
 ?>
 
-<div id="height_add_top"></div>
+<div id="height_select_if_top"></div>
 <div id='title_table'>选取添加级别的部门</div>
 <table id='table_shrink'>
     <form action=position_add.php method=post name=position_add_s>

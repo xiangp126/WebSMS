@@ -70,7 +70,7 @@ window.onload=function() {
                 <li><a href='position.php'>职称信息</a>
                     <ul>
                         <li><a href='position_edit.php'>编辑信息</a></li>
-                        <li><a href='position_add.php'>添加级别</a></li>
+                        <li><a href='position_add_s.php'>添加级别</a></li>
                     </ul>
                 </li>
                 <li><a href='personel.php'>员工信息</a>
