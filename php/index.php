@@ -28,7 +28,7 @@ if(isset($_SESSION['login_user'])){
                         <input type="text" id="username" name='username' class="text_field" placeholder="请输入账号" value='admin'>
                     </div>
                     <div id="div_password">
-                        <input type="password" id="password" name='password' class="text_field" placeholder="请输入密码" value='password'>
+                        <input type="password" id="password" name='password' class="text_field" placeholder="请输入密码" value='passwor'>
                     </div>
                     <div id="div_forget">
                         <a id="forget_pwd" href="javascript:forgetPwd();">忘记密码？</a>

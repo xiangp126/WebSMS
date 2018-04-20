@@ -8,7 +8,7 @@
     - pagination browse for all sql query page
     - additional js on client side, checking form before submit, speedy
     - detailed calculation for 'salary tax analysis'
-    - and draw 3D beautiful pie chart for it
+    - use gapi to draw 3D beautiful pie chart locally for it
 - Brief Demo Below
 ![](https://github.com/xiangp126/jear/blob/master/gif/jear.gif)
 - Programming Environment
