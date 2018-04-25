@@ -11,8 +11,7 @@ $sql = "select * from $table;";
 $result = mysql_query($sql);
 $rowTotal = mysql_num_rows($result);
 
-if($rowTotal == 0)
-{
+if($rowTotal == 0) {
 ?>
     <div id="main" style="height:204px;"></div>
 <?php
@@ -24,8 +23,7 @@ if($rowTotal == 0)
 // $sql = "select * from $table order by id limit $offset, $itemLimit;";
 $sql = "select * from position order by dp_id, level asc limit $offset, $itemLimit;";
 $result = mysql_query($sql);
-if ($row = mysql_fetch_array($result))  //如果有记录则输出
-{
+if ($row = mysql_fetch_array($result)) {
     echo "<div id='title_table'>职称信息列表</div>";
     echo "<table id='table_c'>";
     echo "<tr id='tr'>";
@@ -35,8 +33,7 @@ if ($row = mysql_fetch_array($result))  //如果有记录则输出
     echo "<td>头衔</td>";
     echo "<td>基础薪水</td>";
     echo "</tr>";
-    do
-    {
+    do {
         list($dp_id, $dp_name, $level_id, $level, $bsalary) = $row;
         echo "<tr>";
         echo "<td>$dp_id</td>";
