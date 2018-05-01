@@ -24,7 +24,7 @@ if($rowTotal == 0)
 @require_once "pagi_head.php";
 $sql = "select bn.id, p.name, year, month, type.name as tname, bonus from bonus as bn,
     personel as p, bntype as type where bn.id = p.id and bn.grade = type.grade
-    order by bn.id asc, year desc, month desc limit $offset, $itemLimit;";
+    order by year desc, month desc, bn.id asc limit $offset, $itemLimit;";
 $result = mysql_query($sql);
 if ($row = mysql_fetch_array($result))
 {

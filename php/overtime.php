@@ -22,8 +22,8 @@ if($rowTotal == 0)
 @require_once "pagi_head.php";
 // $sql = "select * from $table order by id limit $offset, $itemLimit;";
 $sql = "select ov.id, p.name, year, month, day, type.name as tname, hours from overtime as ov,
-    personel as p, ovtype as type where ov.id = p.id and ov.grade = type.grade order by ov.id asc,
-    year desc, month desc, day desc limit $offset, $itemLimit;";
+    personel as p, ovtype as type where ov.id = p.id and ov.grade = type.grade order by
+    year desc, month desc, ov.id asc, day desc limit $offset, $itemLimit;";
 $result = mysql_query($sql);
 if ($row = mysql_fetch_array($result))
 {

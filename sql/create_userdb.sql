@@ -9,4 +9,3 @@ flush privileges;
 create database user_database;
 grant all privileges on user_database.* to user_name@localhost identified  by 'user_password';
 flush privileges;
-

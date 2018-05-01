@@ -23,8 +23,8 @@ if($rowTotal == 0)
 @require_once "pagi_head.php";
 // $sql = "select * from $table order by id limit $offset, $itemLimit;";
 $sql = "select lv.id, p.name, year, month, day, type.name as tname, hours from `leave` as lv,
-    personel as p, lvtype as type where lv.id = p.id and lv.grade = type.grade order by lv.id asc,
-    year desc, month desc, day desc limit $offset, $itemLimit;";
+    personel as p, lvtype as type where lv.id = p.id and lv.grade = type.grade order by
+    year desc, month desc, lv.id asc, day desc limit $offset, $itemLimit;";
 $result = mysql_query($sql);
 if ($row = mysql_fetch_array($result))
 {
