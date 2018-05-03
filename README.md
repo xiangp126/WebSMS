@@ -34,5 +34,10 @@ sudo chkconfig httpdd on
 - Let phpmyadmin outer access refer [phpMyAdmin.conf](https://github.com/xiangp126/Jear/blob/master/config/phpMyAdmin.conf)
 - Change Listen port for apache edit /etc/httpd/conf/httpd.conf
 
+### Deploy
+```
+copy php/* to your system Apache root (Example /var/www/html )
+```
+
 ## License
 The [MIT](https://github.com/xiangp126/jear/blob/master/LICENSE.txt) License(MIT)
