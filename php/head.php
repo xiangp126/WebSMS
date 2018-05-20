@@ -38,7 +38,7 @@ window.onload=function() {
                     <ul>
                         <li><a href='salary_calc.php'>结算工资</a></li>
                         <li><a href='salary_query.php'>查询工资</a></li>
-                        <li><a href='salary_query_d.php'>部门统计</a></li>
+                        <li><a href='salary_query_d.php'>工资曲线</a></li>
                     </ul>
                 </li>
                 <li><a href='bonus.php'>奖金信息</a>

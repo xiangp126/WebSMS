@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-        <title>税前薪水去向统计图</title>
+        <title>年度工资曲线图</title>
         <link href="gapi/tooltip.css" rel="stylesheet" type="text/css">
     </head>
 
@@ -28,16 +28,16 @@
             function drawVisualization() {
                 // Create and populate the data table.
                 var data = google.visualization.arrayToDataTable([
-                    ['id', 'salary after tax'],
+                    ['Month', '税后薪水', '税前薪水'],
                     <?php
                         foreach ($drawArray as $key => $value) {
-                            echo "['$key', $value],";
+                            echo "['$key' + '月份', $value[0], $value[1]],";
                         } ?>
                 ]);
                 var options = {
-                    title: 'Department Salary Statistical Chart',
+                    // title: '个人工资年度曲线图',
                     curveType: 'function',
-                    legend: { position: 'bottom' },
+                    legend: { position: 'middle' },
                     width: 900,
                     height: 500
                 };

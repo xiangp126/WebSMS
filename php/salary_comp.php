@@ -13,24 +13,25 @@
 
 $operation = @$_REQUEST['operation'];
 if ($operation == 'salary_comp') {
-    $dp_id = $_POST['dp_id'];
-    $year  = $_POST['year'];
-    $month = $_POST['month'];
+    $id = $_POST['id'];
+    $year = $_POST['year'];
 
-    $sql = "select sa.id, pe.dp_id, po.dp_name, year, month, pre_tax, post_tax from salary as sa, personel as pe, position as po where sa.id = pe.id and pe.dp_id = po.dp_id and year = $year and month = $month and po.dp_id = $dp_id group by sa.id;";
-    $result = mysql_query($sql) or die('haha');
+    $sql = "select sa.id, name, year, month, pre_tax, post_tax from salary as sa, personel as pe where sa.id = pe.id and sa.id = $id and year = $year order by month asc;";
+    $result = mysql_query($sql) or die('salary comp query error!');
     if($row = mysql_fetch_array($result)){
+        // Get name with id first
+        list($id, $name, $year, $month, $preTax, $postTax) = $row;
         echo "<div id='title_table' class='title_edit'> 查看 ";
-        echo "<span id='select_name'>$dp_id</span> 号部门 ";
-        echo "<span id='select_name'>$year</span>年 ";
-        echo "<span id='select_name'>$month</span>月 工资统计信息</div>";
+        echo "<span id='select_name'>$id</span> 号员工 ";
+        echo "<span id='select_name'>$name</span> ";
+        echo "<span id='select_name'>$year</span>年 工资曲线图</div>";
         do {
-            list($id, $dp_id, $dp_name, $year, $month, $preTax, $postTax) = $row;
-            // fill in data
-            $drawArray[$id] = $postTax;
+            list($id, $name, $year, $month, $preTax, $postTax) = $row;
+            // Fill in data, Post Tax & Pre Tax
+            $drawArray[$month] = array($postTax, $preTax);
         } while($row = mysql_fetch_array($result));
     } else {
-        echo "<script>alert('抱歉，无该部门工资统计信息！'); history.go(-1);</script>";
+        echo "<script>alert('抱歉，无该员工该年工资信息！'); history.go(-1);</script>";
     }
 }
 ?>
