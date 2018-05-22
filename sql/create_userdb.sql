@@ -1,11 +1,11 @@
 --  Notice !
---  Replace user_name and user_password and user_database with the real you use
+--  Replace user_name and user_password with the real you use
 --  > mysql -u root -p
---  mysql > source This.sql
+--  mysql > source create_userdb.sql
 
 use mysql;
 create user 'user_name'@'localhost' identified by 'user_password';
 flush privileges;
-create database user_database;
-grant all privileges on user_database.* to user_name@localhost identified  by 'user_password';
+create database salary_system;
+grant all privileges on salary_system.* to user_name@localhost identified  by 'user_password';
 flush privileges;
