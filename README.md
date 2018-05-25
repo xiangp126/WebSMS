@@ -10,13 +10,14 @@
     - detailed calculation for 'salary tax analysis'
     - use gapi to draw 3D beautiful pie chart locally for it
 - Brief Demo Below
-![](./gif/jear.gif)
+![](./gif/demo.gif)
 - Programming Environment
     - PhpMyAdmin SQL Dump version 4.0.10.20
     - MySQL Server version: 5.1.73
     - PHP Version: 5.3.3
     - CentOS 6.9
     - VIM and My Personel [Giggle](https://github.com/xiangp126/Giggle)
+- Current stable released version: v0.5
 
 ## Quick Deploy
 ### Pre
