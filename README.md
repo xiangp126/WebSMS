@@ -1,4 +1,4 @@
-- This project aims to implement an 'Enterprise Salary Management System'
+- This project aims to implement an 'Enterprise Salary Management System / WEB'
 - Featured by
     - encrypted password stored in db with sha1
     - login check using 'session' with 'timeout' set
@@ -16,7 +16,7 @@
     - MySQL Server version: 5.1.73
     - PHP Version: 5.3.3
     - CentOS 6.9
-    - VIM and My Personel [Giggle](https://github.com/xiangp126/Giggle)
+    - VIM and My Personal [Giggle](https://github.com/xiangp126/Giggle)
 - Current stable released version: v0.5
 
 ## Quick Deploy
