@@ -1,4 +1,4 @@
-## Illustrate
+### Illustrate
 - This project aims to implement an **Enterprise Salary Management System** / WEB
 - Featured by
     - encrypt password with sha1
@@ -18,10 +18,10 @@
     - PHP Version: 5.3.3
     - CentOS 6.9
     - VIM and My Personal [Giggle](https://github.com/xiangp126/Giggle)
-- Current stable released version: v0.5
+- Current stable released version: v1.0
 
-## Quick Deploy
-### Pre
+### Quick Deploy
+#### Pre
 - CentOS
 
 ```bash
@@ -47,15 +47,15 @@ sudo service mysql start
 sudo service apache2 start
 ```
 
-### Config
+#### Config
 - Let mysql use char set 'utf8' refer [my.cnf](./config/my.cnf)
 - Let phpmyadmin outer access refer [phpMyAdmin.conf](./config/phpMyAdmin.conf)
 - Change Listen port for apache edit `/etc/httpd/conf/httpd.conf`
 
-### Deploy
+#### Deploy
 ```
-copy php/* to your system Apache root (Example /var/www/html )
+copy php/* to your system Apache root (Example /var/www/html)
 ```
 
-## License
+### License
 The [MIT](./LICENSE.txt) License(MIT)
