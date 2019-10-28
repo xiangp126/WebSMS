@@ -17,12 +17,26 @@
     - MySQL Server version: 5.1.73
     - PHP Version: 5.3.3
     - CentOS 6.9
-    - VIM and My Personal [Giggle](https://github.com/xiangp126/Giggle)
+    - VIM and My Personal [CrossLv](https://github.com/xiangp126/Giggle)
 - Current stable released version: v1.0
 
 ### Quick Deploy
 #### Pre
-- CentOS
+- CentOS 7
+
+```bash
+# Need install php5
+sudo yum install mysql mysql-server php-mysql phpmyadmin httpd -y
+sudo yum install mariadb-server
+
+sudo systemctl start mariadb.service
+sudo systemctl start httpd.service
+
+systemctl enable mariadb.service
+systemctl enable httpd.service
+```
+
+- CentOS 6
 
 ```bash
 # Need install php5
@@ -48,13 +62,13 @@ sudo service apache2 start
 ```
 
 #### Config
-- Let mysql use char set 'utf8' refer [my.cnf](./config/my.cnf)
-- Let phpmyadmin outer access refer [phpMyAdmin.conf](./config/phpMyAdmin.conf)
-- Change Listen port for apache edit `/etc/httpd/conf/httpd.conf`
+- How to make MySQL use 'UTF8' char set, refer [my.cnf](./config/my.cnf)
+- How to open outer access permit for phpMyAdmin, pls refer [phpMyAdmin.conf](./config/phpMyAdmin.conf)
+- Want to Change Listen port for Apache? just edit `/etc/httpd/conf/httpd.conf`
 
 #### Deploy
 ```
-copy php/* to your system Apache root (Example /var/www/html)
+copy php/* to Apache root of your OS system(E.g. /var/www/html)
 ```
 
 ### License
