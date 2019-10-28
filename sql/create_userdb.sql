@@ -1,11 +1,12 @@
 --  Notice !
---  Replace user_name and user_password with the real you use
+--  Replace blank and dusk with the real user_name and user_password you use
+--  %s/blank/xx/gc
 --  > mysql -u root -p
 --  mysql > source create_userdb.sql
 
 use mysql;
-create user 'user_name'@'localhost' identified by 'user_password';
+create user 'blank'@'localhost' identified by 'dusk';
 flush privileges;
 create database salary_system;
-grant all privileges on salary_system.* to user_name@localhost identified  by 'user_password';
+grant all privileges on salary_system.* to blank@localhost identified by 'dusk';
 flush privileges;

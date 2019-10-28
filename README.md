@@ -1,3 +1,21 @@
+### Contents
+- [Illustrate and Introduction](#illustrate)
+- [Prerequisite Install](#preinstall)
+- [Setup Database](#setupdb)
+    - [connect to MySQL for the first time](#connectmysql)
+    - [update New Password for root](#updatepasswd)
+    - [make MySQL use UTF-8 char set to support Chinese?](#utf8formysql)
+    - [reset root password in case of forgotten](#resetrootpwd)
+- [Setup Apache(httpd)](setuphttpd)    
+    - [get version of installed httpd](#getversionofhttpd)
+    - [change listen port for Apache?](#changelistenport)
+    - [set `DirectoryIndex` for httpd](#directoryindex)
+- [Setup phpMyAdmin](#setupmyadmin)
+    - [allow remote access for phpMyAdmin?](#remoteaccess)
+- [Guide to Deploy and Make `QUIZ` Work](#guide)
+    - [restore main repo files to httpd root](#restore)
+
+<a id=illustrate></a>
 ### Illustrate
 - This project aims to implement an **Enterprise Salary Management System** / WEB
 - Featured by
@@ -19,16 +37,6 @@
     - CentOS Linux release 7.7.1908 (Core)
     - VIM and My Personal [CrossLv](https://github.com/xiangp126/CrossLv)
 - Current stable released version: v1.0
-
-### Contents
-- [Prerequisite Install](#preinstall)
-- [Setup Database](#setupdb)
-    - [connect to MySQL for the first time](#connectmysql)
-    - [update New Password for root](#updatepasswd)
-    - [make MySQL use UTF-8 char set to support Chinese?](#utf8formysql)
-    - [reset root password in case of forgotten](#resetrootpwd)
-- [Setup phpMyAdmin](#setupmyadmin)
-    - [allow remote access for phpMyAdmin?](#remoteaccess)
 
 <a id=preinstall></a>
 ### Prerequisite Install
@@ -311,19 +319,21 @@ sudo systemctl restart mariadb.service
 # then you can login with `mysql -u root`
 ```
 
+<a id=setuphttpd></a>
 ### Setup Apache(httpd)
-- see the version installed - 2.4
-
+<a id=getversionofhttpd></a>
+#### get version of installed httpd
 ```bash
 > httpd -v
 Server version: Apache/2.4.6 (CentOS)
 Server built:   Aug  8 2019 11:41:18
 ```
 
-- listen port for Apache? just edit `/etc/httpd/conf/httpd.conf`
+<a id=changelistenport></a>
+#### change listen port for Apache? 
+just edit `/etc/httpd/conf/httpd.conf`, 80 => 8088 for example
 
 ```bash
-# change listen port from 80 to 8088 for example
 > sudo vim /etc/httpd/conf/httpd.conf
 # Change this to Listen on specific IP addresses as shown below to
 # prevent Apache from glomming onto all bound IP addresses.
@@ -341,6 +351,39 @@ sudo systemctl restart httpd.service
 # or separately
 sudo systemctl stop httpd.service
 sudo systemctl start httpd.service
+```
+
+<a id=directoryindex></a>
+#### set `DirectoryIndex` for httpd
+make Apache recognize index.php as default index page as well
+
+```bash
+> sudo vim /etc/httpd/conf/httpd.conf
+#
+# DirectoryIndex: sets the file that Apache will serve if a directory
+# is requested.
+#
+<IfModule dir_module>
+    DirectoryIndex index.html
+</IfModule>
+```
+
+to
+
+```bash
+#
+# DirectoryIndex: sets the file that Apache will serve if a directory
+# is requested.
+#
+<IfModule dir_module>
+    DirectoryIndex index.html php.index
+</IfModule>
+```
+
+and restart httpd later
+
+```bash
+sudo systemctl restart httpd.service
 ```
 
 <a id= setupmyadmin></a>
@@ -400,45 +443,19 @@ change to
 </Directory>
 ```
 
-
-
-### Want to Deploy and Make `QUIZ` Work?
-- restore files under Directory **php** to Apache root of your OS system, E.g. `/var/www/html`
+<a id=guide></a>
+### Guide to Deploy and Make `QUIZ` Work
+<a id=restore></a>
+#### restore main repo files to httpd root
+restore files under Directory **php** to Apache root of your OS, e.g. `/var/www/html`
 
 ```bash
 sudo cp -r php/* /var/www/html/
 ```
 
-- make Apache recognize index.php as default index page as well
+<a id=extrauser></a>
+#### create extra user and db
 
-```bash
-> sudo vim /etc/httpd/conf/httpd.conf
-#
-# DirectoryIndex: sets the file that Apache will serve if a directory
-# is requested.
-#
-<IfModule dir_module>
-    DirectoryIndex index.html
-</IfModule>
-```
-
-to
-
-```bash
-#
-# DirectoryIndex: sets the file that Apache will serve if a directory
-# is requested.
-#
-<IfModule dir_module>
-    DirectoryIndex index.html php.index
-</IfModule>
-```
-
-and restart httpd later
-
-```bash
-sudo systemctl restart httpd.service
-```
 
 ### License
 The [MIT](./LICENSE.txt) License(MIT)
