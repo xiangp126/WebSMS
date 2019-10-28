@@ -6,14 +6,18 @@
     - [update New Password for root](#updatepasswd)
     - [make MySQL use UTF-8 char set to support Chinese?](#utf8formysql)
     - [reset root password in case of forgotten](#resetrootpwd)
-- [Setup Apache(httpd)](setuphttpd)    
+- [Setup Apache(httpd)](setuphttpd)
     - [get version of installed httpd](#getversionofhttpd)
     - [change listen port for Apache?](#changelistenport)
     - [set `DirectoryIndex` for httpd](#directoryindex)
 - [Setup phpMyAdmin](#setupmyadmin)
     - [allow remote access for phpMyAdmin?](#remoteaccess)
 - [Guide to Deploy and Make `QUIZ` Work](#guide)
+    - [create extra user specific for this project](#extrauser)
+    - [onekey to create & setup specific database for this system](#specificdb)
+    - [revise placeholder for form of `index.php` [optional]](#optional)
     - [restore main repo files to httpd root](#restore)
+- [Browser Your Website](#browse)
 
 <a id=illustrate></a>
 ### Illustrate
@@ -330,7 +334,7 @@ Server built:   Aug  8 2019 11:41:18
 ```
 
 <a id=changelistenport></a>
-#### change listen port for Apache? 
+#### change listen port for Apache?
 just edit `/etc/httpd/conf/httpd.conf`, 80 => 8088 for example
 
 ```bash
@@ -445,17 +449,143 @@ change to
 
 <a id=guide></a>
 ### Guide to Deploy and Make `QUIZ` Work
+<a id=extrauser></a>
+#### create extra user specific for this project
+- you must change user\_name and user\_password of your own
+
+replace `blank` and `dusk` with the real `user_name` and `user_password` you set in _sql/create\_userdb.sql_
+
+
+```sql
+--  Notice !
+--  Replace blank and dusk with the real user_name and user_password you use
+--  %s/blank/xx/gc
+--  https://www.dashlane.com/zh/features/password-generator
+
+--  > mysql -u root -p
+--  mysql > source create_userdb.sql
+
+use mysql;
+create user 'blank'@'localhost' identified by 'dusk';
+flush privileges;
+create database salary_system;
+grant all privileges on salary_system.* to blank@localhost identified by 'dusk';
+flush privileges;
+```
+
+you can refer <https://www.dashlane.com/zh/features/password-generator> to generate strong password
+
+```sql
+$ mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 55
+Server version: 5.5.64-MariaDB MariaDB Server
+
+MariaDB [mysql]> select current_user();
++----------------+
+| current_user() |
++----------------+
+| root@localhost |
++----------------+
+1 row in set (0.00 sec)
+
+MariaDB [mysql]> source sql/create_userdb.sql
+Database changed
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [mysql]>
+
+```
+
+<a id=specificdb></a>
+#### onekey to create and setup specific database for this system
+opeartion for database `salary_system`
+
+```sql
+MariaDB [mysql]> source sql/salary_system.sql
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+...
+
+MariaDB [salary_system]>
+```
+
+<a id=conninfo></a>
+#### adjust connection info for php
+- you must change user\_name and user\_password used for connection
+
+replace `blank` and `dusk` with the real `user_name` and `user_password` you set in _sql/create\_userdb.sql_
+
+- sudo vim `php/conn.php`
+
+```php
+<?php
+// Replace blank and dusk with the real user_name and user_password
+// you set in sql/create_userdb.sql
+// %s/blank/xx/gc
+$dbUserName = "blank";
+$dbPasswd = "dusk";
+$conn = mysql_connect("localhost", $dbUserName, $dbPasswd) or die('connect to database failed!');
+mysql_select_db("salary_system", $conn) or die('connect to database failed!');
+mysql_query("SET NAMES 'utf8'");
+?>
+```
+
+<a id=optional></a>
+#### revise placeholder for form of `index.php` [optional]
+- vim php/index.php
+
+```php
+<div id="login_form">
+    <form name='login_form' action='login_check.php' method="post">
+        <div id="div_username">
+            <input type="text" id="username" name='username' class="text_field" placeholder="请输入账号" value='blank'>
+        </div>
+        <div id="div_password">
+            <input type="password" id="password" name='password' class="text_field" placeholder="请输入密码" value=''>
+        </div>
+        <div id="div_forget">
+            <a id="forget_pwd" href="javascript:forgetPwd();">忘记密码？</a>
+        </div>
+        <div id="div_btn_login">
+            <input type="submit" id="btn_login" name='submit' value="马上登录" onclick='return checkSubmit(this.form)'>
+        </div>
+    </form>
+</div>
+```
+
+- optional
+
+replace `blank` with the real `user_name` you set in _sql/create\_userdb.sql_
+
 <a id=restore></a>
 #### restore main repo files to httpd root
-restore files under Directory **php** to Apache root of your OS, e.g. `/var/www/html`
+restore files under Directory **./php** to Apache root of your OS, e.g. `/var/www/html`
 
 ```bash
 sudo cp -r php/* /var/www/html/
 ```
 
-<a id=extrauser></a>
-#### create extra user and db
-
+<a id=browse></a>
+#### browser your website
+```
+http://[your_domain]:8088
+```
+enjoy!
 
 ### License
 The [MIT](./LICENSE.txt) License(MIT)
