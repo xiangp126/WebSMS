@@ -1,4 +1,4 @@
-### Brief Demo
+### [Brief Online Demo Link](http://giggle.ddns.net:8088/)
 ![](./gif/demo.gif)
 
 ### Contents
