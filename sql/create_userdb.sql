@@ -1,6 +1,8 @@
 --  Notice !
 --  Replace blank and dusk with the real user_name and user_password you use
 --  %s/blank/xx/gc
+--  https://www.dashlane.com/zh/features/password-generator
+
 --  > mysql -u root -p
 --  mysql > source create_userdb.sql
 
