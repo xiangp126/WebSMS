@@ -25,7 +25,7 @@ if(isset($_SESSION['login_user'])){
             <div id="login_form">
                 <form name='login_form' action='login_check.php' method="post">
                     <div id="div_username">
-                        <input type="text" id="username" name='username' class="text_field" placeholder="请输入账号" value='blank'>
+                        <input type="text" id="username" name='username' class="text_field" placeholder="请输入账号" value='admin'>
                     </div>
                     <div id="div_password">
                         <input type="password" id="password" name='password' class="text_field" placeholder="请输入密码" value=''>

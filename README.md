@@ -570,7 +570,7 @@ mysql_query("SET NAMES 'utf8'");
 
 - optional
 
-replace `blank` with the real `user_name` you set in _sql/create\_userdb.sql_
+user_name that can login is defined in _salary\_system.user_
 
 <a id=restore></a>
 #### restore main repo files to httpd root
