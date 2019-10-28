@@ -692,8 +692,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`userid`, `password`) VALUES
-('root', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8'),
-('admin', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8');
+('root', '609ecdb96febaff02902794ecbeb8ecec371ff18'),
+('admin', '609ecdb96febaff02902794ecbeb8ecec371ff18');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
