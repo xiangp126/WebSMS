@@ -35,6 +35,9 @@
     - additional js on client side, checking form before submit, speedy
     - detailed calculation for `salary tax analysis`
     - use **GAPI** to draw **3D Pie Chart** locally for it
+
+![](./gif/salary_draw.gif)
+
 - Programming Environment
     - PhpMyAdmin SQL Dump version 4.4.15.10
     - MySQL Server version: 5.5.64-MariaDB MariaDB Server
