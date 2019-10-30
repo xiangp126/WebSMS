@@ -363,7 +363,7 @@ sudo systemctl start httpd.service
 
 <a id=directoryindex></a>
 #### set `DirectoryIndex` for httpd
-make Apache recognize index.php as default index page as well
+make Apache recognize **index.php** as default index page as well
 
 ```bash
 > sudo vim /etc/httpd/conf/httpd.conf
@@ -384,7 +384,7 @@ to
 # is requested.
 #
 <IfModule dir_module>
-    DirectoryIndex index.html php.index
+    DirectoryIndex index.html php.index    <== here
 </IfModule>
 ```
 
